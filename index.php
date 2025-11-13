@@ -207,5 +207,8 @@
             }
          ?>
     </div>
+    <div class="footer">
+        <h5>&copy; <?php echo date('Y')?> Tech Afrika</h5>
+    </div>
 </body>
 </html>
