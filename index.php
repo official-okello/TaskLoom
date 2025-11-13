@@ -43,14 +43,15 @@
 </head>
 <body>
     <div class="header">
-        <h1>Task Manager</h1>
-        <div class="header-actions">
-            <span class="welcome-msg">Welcome, <?php echo htmlspecialchars($username); ?></span>
-            <a href="edit_task.php" class="btn btn-primary">New Task</a>
-            <a href="logout.php" class="btn btn-logout">Logout</a>
+        <div class="logo">
+            <img src="./assets/img/TaskLoom.png" alt="">
+        </div>
+        <div class="button-group">
+            <button class="btn btn-success"><a href="edit_task.php">New Task</a></button>
+            <button class="btn btn-danger"><a href="logout.php">Logout</a></button>    
         </div>
     </div>
-
+    <span class="welcome-msg">Welcome, <?php echo htmlspecialchars($username); ?></span>
     <?php 
     require_once __DIR__ . '/includes/flash.inc.php';
     echo FlashMessage::display(); 
@@ -136,19 +137,6 @@
             try {
                 // Get filtered tasks
                 $tasks = $taskManager->getTasks($filters, $sortBy, $sortOrder);
-
-                // Debug banner (only when ?debug=1 is present) to help troubleshoot UI issues
-                // if (isset($_GET['debug']) && $_GET['debug'] === '1') {
-                //     $taskCount = is_array($tasks) ? count($tasks) : 0;
-                //     echo "<div style='background:#fffbcc;border:1px solid #ffd24d;padding:8px;margin:8px 0;'>";
-                //     echo "<strong>DEBUG</strong>: session user_id=" . (isset($_SESSION['user_id']) ? htmlspecialchars((string)$_SESSION['user_id']) : '(none)') . ", username=" . (isset($_SESSION['username']) ? htmlspecialchars($_SESSION['username']) : '(none)') . "; tasks_found=" . $taskCount;
-                //     echo "</div>";
-                //     // Raw server-side task dump for debugging (visible only with ?debug=1)
-                //     echo "<pre style='background:#222;color:#eee;padding:10px;border-radius:6px;overflow:auto;max-height:300px;'>" . htmlspecialchars(print_r(
-                //         $tasks,
-                //         true
-                //     )) . "</pre>";
-                // }
                 
                 if (count($tasks) > 0) {
                     foreach ($tasks as $task) {
