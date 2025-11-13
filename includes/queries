@@ -1,0 +1,45 @@
+SELECT
+    client_name,
+    YEAR(created_at) AS Year,
+    MONTHNAME(created_at) AS Month,
+    SUM(CASE WHEN DAY(created_at) = '1' THEN 1 ELSE 0 END) AS "1st",
+    SUM(CASE WHEN DAY(created_at) = '2' THEN 1 ELSE 0 END) AS "2nd",
+    SUM(CASE WHEN DAY(created_at) = '3' THEN 1 ELSE 0 END) AS "3rd",
+    SUM(CASE WHEN DAY(created_at) = '4' THEN 1 ELSE 0 END) AS "4th",
+    SUM(CASE WHEN DAY(created_at) = '5' THEN 1 ELSE 0 END) AS "5th",
+    SUM(CASE WHEN DAY(created_at) = '6' THEN 1 ELSE 0 END) AS "6th",
+    SUM(CASE WHEN DAY(created_at) = '7' THEN 1 ELSE 0 END) AS "7th",
+    SUM(CASE WHEN DAY(created_at) = '8' THEN 1 ELSE 0 END) AS "8th",
+    SUM(CASE WHEN DAY(created_at) = '9' THEN 1 ELSE 0 END) AS "9th",
+    SUM(CASE WHEN DAY(created_at) = '10' THEN 1 ELSE 0 END) AS "10th",
+    SUM(CASE WHEN DAY(created_at) = '11' THEN 1 ELSE 0 END) AS "11th",
+    SUM(CASE WHEN DAY(created_at) = '12' THEN 1 ELSE 0 END) AS "12th",
+    SUM(CASE WHEN DAY(created_at) = '13' THEN 1 ELSE 0 END) AS "13th",
+    SUM(CASE WHEN DAY(created_at) = '14' THEN 1 ELSE 0 END) AS "14th",
+    SUM(CASE WHEN DAY(created_at) = '15' THEN 1 ELSE 0 END) AS "15th",
+    SUM(CASE WHEN DAY(created_at) = '16' THEN 1 ELSE 0 END) AS "16th",
+    SUM(CASE WHEN DAY(created_at) = '17' THEN 1 ELSE 0 END) AS "17th",
+    SUM(CASE WHEN DAY(created_at) = '18' THEN 1 ELSE 0 END) AS "18th",
+    SUM(CASE WHEN DAY(created_at) = '19' THEN 1 ELSE 0 END) AS "19th",
+    SUM(CASE WHEN DAY(created_at) = '20' THEN 1 ELSE 0 END) AS "20th",
+    SUM(CASE WHEN DAY(created_at) = '21' THEN 1 ELSE 0 END) AS "21st",
+    SUM(CASE WHEN DAY(created_at) = '22' THEN 1 ELSE 0 END) AS "22nd",
+    SUM(CASE WHEN DAY(created_at) = '23' THEN 1 ELSE 0 END) AS "23rd",
+    SUM(CASE WHEN DAY(created_at) = '24' THEN 1 ELSE 0 END) AS "24th",
+    SUM(CASE WHEN DAY(created_at) = '25' THEN 1 ELSE 0 END) AS "25th",
+    SUM(CASE WHEN DAY(created_at) = '26' THEN 1 ELSE 0 END) AS "26th",
+    SUM(CASE WHEN DAY(created_at) = '27' THEN 1 ELSE 0 END) AS "27th",
+    SUM(CASE WHEN DAY(created_at) = '28' THEN 1 ELSE 0 END) AS "28th",
+    SUM(CASE WHEN DAY(created_at) = '29' THEN 1 ELSE 0 END) AS "29th",
+    SUM(CASE WHEN DAY(created_at) = '30' THEN 1 ELSE 0 END) AS "30th",
+    SUM(CASE WHEN DAY(created_at) = '31' THEN 1 ELSE 0 END) AS "31st",
+    COUNT(id) AS Total
+FROM
+    outbound_bi
+GROUP BY
+    client_name,
+    Year,
+    Month
+ORDER BY
+    Total Desc,
+    client_name ASC;

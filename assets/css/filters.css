@@ -1,0 +1,115 @@
+/* Add to existing style.css */
+
+/* Task Filters */
+.filters-section {
+    background: white;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.filters-section h3 {
+    margin-bottom: 15px;
+}
+
+.filter-group {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 15px;
+    flex-wrap: wrap;
+}
+
+.filter-item {
+    flex: 1;
+    min-width: 200px;
+}
+
+.filter-item label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.filter-item select,
+.filter-item input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+/* Task Priority Colors */
+.priority-high {
+    border-left: 4px solid #dc3545;
+}
+
+.priority-medium {
+    border-left: 4px solid #ffc107;
+}
+
+.priority-low {
+    border-left: 4px solid #28a745;
+}
+
+/* Due Date Indicator */
+.due-date {
+    font-size: 0.9em;
+    color: #666;
+}
+
+.due-date.overdue {
+    color: #dc3545;
+    font-weight: bold;
+}
+
+/* Task Tags */
+.task-tags {
+    margin-top: 10px;
+}
+
+.tag {
+    display: inline-block;
+    padding: 2px 8px;
+    margin: 2px;
+    background: #e9ecef;
+    border-radius: 12px;
+    font-size: 0.85em;
+    color: #495057;
+}
+
+/* Task Categories */
+.category-badge {
+    display: inline-block;
+    padding: 3px 10px;
+    background: #007bff;
+    color: white;
+    border-radius: 12px;
+    font-size: 0.85em;
+    margin-bottom: 10px;
+}
+
+/* Shared Tasks Indicator */
+.shared-indicator {
+    font-size: 0.85em;
+    color: #6c757d;
+    margin-top: 5px;
+}
+
+.shared-users {
+    display: flex;
+    gap: 5px;
+    margin-top: 5px;
+}
+
+.user-avatar {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: #007bff;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8em;
+}
