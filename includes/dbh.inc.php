@@ -5,7 +5,7 @@
         private $dbpass;
         private $dbname;
 
-        public function __construct($dbhost="localhost", $dbuser="root", $dbpass="371675", $dbname="simple_todo") {
+        public function __construct($dbhost="localhost", $dbuser="root", $dbpass="371675", $dbname="TaskLoom") {
             $this->dbhost = $dbhost;
             $this->dbuser = $dbuser;
             $this->dbpass = $dbpass;

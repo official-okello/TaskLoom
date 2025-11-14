@@ -35,12 +35,12 @@ if ($taskId) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?php echo $taskId ? 'Edit Task' : 'New Task'; ?> - SimpleToDo</title>
+    <title><?php echo $taskId ? 'Edit Task' : 'New Task'; ?> - TaskLoom</title>
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-    <div class="container">
-        <h1><?php echo $taskId ? 'Edit Task' : 'New Task'; ?></h1>
+    <div class="form-container">
+        <h1><?php echo $taskId ? 'Edit Task' : 'Create New Task'; ?></h1>
         
         <?php echo FlashMessage::display(); ?>
 
@@ -92,7 +92,9 @@ if ($taskId) {
                 <button type="submit" class="btn btn-primary">
                     <?php echo $taskId ? 'Update Task' : 'Create Task'; ?>
                 </button>
-                <a href="index.php" class="btn btn-secondary">Cancel</a>
+                <button type="submit" class="btn btn-secondary">
+                    <a href="index.php">Cancel</a>
+                </button>
             </div>
         </form>
     </div>

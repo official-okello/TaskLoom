@@ -36,15 +36,15 @@ if (!$isNewTask) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?php echo $isNewTask ? 'Add New Task' : 'Edit Task'; ?> - MyToDo</title>
+    <title><?php echo $isNewTask ? 'Add New Task' : 'Edit Task'; ?> - TaskLoom</title>
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
     <div class="header">
         <h1><?php echo $isNewTask ? 'Add New Task' : 'Edit Task'; ?></h1>
-        <div class="header-actions">
-            <a href="index.php" class="btn btn-secondary">Back to Tasks</a>
-        </div>
+        <button class="btn btn-primary">
+            <a href="index.php">Back to Tasks</a>
+        </button>
     </div>
 
     <?php
@@ -88,43 +88,11 @@ if (!$isNewTask) {
                 <button type="submit" name="save" class="btn btn-primary">
                     <?php echo $isNewTask ? 'Add Task' : 'Save Changes'; ?>
                 </button>
-                <a href="index.php" class="btn btn-secondary">Cancel</a>
+                <button type="submit" name="save" class="btn btn-secondary">
+                    <a href="index.php">Cancel</a>
+                </button>
             </div>
         </form>
     </div>
-
-    <style>
-        .form-container {
-            max-width: 600px;
-            margin: 20px auto;
-            padding: 20px;
-            background: white;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
-        .form-group {
-            margin-bottom: 15px;
-        }
-        .form-group label {
-            display: block;
-            margin-bottom: 5px;
-            font-weight: bold;
-        }
-        .form-group textarea {
-            width: 100%;
-            padding: 8px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            min-height: 100px;
-        }
-        .form-actions {
-            display: flex;
-            gap: 10px;
-            margin-top: 20px;
-        }
-        .form-actions .btn {
-            min-width: 120px;
-        }
-    </style>
 </body>
 </html>

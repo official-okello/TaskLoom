@@ -28,35 +28,36 @@ $csrf_token = generateCsrfToken();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login - Simple ToDo</title>
-    <style>
-        .error-message {
-            color: red;
-            margin-bottom: 10px;
-        }
-    </style>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="icon" href="./assets/img/TaskLoom.ico" type="image/x-icon">
+    <title>Login - TaskLoom</title>
 </head>
 <body>
-    <h3>User Login</h3>
+    <h3 class="login-register-title">User Login</h3>
     <?php if ($error_message): ?>
         <div class="error-message"><?php echo htmlspecialchars($error_message); ?></div>
     <?php endif; ?>
-    
-    <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
-        <input type="hidden" name="csrf_token" value="<?php echo $csrf_token; ?>">
-        
-        <label for="username">Username:</label>
-        <input type="text" id="username" name="username" required 
-               value="<?php echo isset($_POST['username']) ? htmlspecialchars($_POST['username']) : ''; ?>">
-        <br/><br/>
-        
-        <label for="password">Password:</label>
-        <input type="password" id="password" name="password" required>
-        <br/><br/>
-        
-        <button type="submit" name="login">Login</button>
-        <p class="redir-to-register">Don't have an account? <a href="register.php">Register</a> here.</p>
-    </form>
+    <div class="form-container">
+        <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
+            <div class="form-group">
+                <input type="hidden" name="csrf_token" value="<?php echo $csrf_token; ?>">
+            </div>
+            <div class="form-group">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required 
+                    value="<?php echo isset($_POST['username']) ? htmlspecialchars($_POST['username']) : ''; ?>">
+            </div>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <div class="form-group">
+                <button type="submit" name="login">Login</button>
+            </div>
+            
+            <p class="redir-to-register">Don't have an account? <a href="register.php">Register</a> here.</p>
+        </form>
+    </div>
 </body>
 </html>
 

@@ -4,7 +4,7 @@ define('DEVELOPMENT_MODE', true); // Set to false in production
 
 // Database configuration
 define('DB_HOST', 'localhost');
-define('DB_NAME', 'simple_todo');
+define('DB_NAME', 'TaskLoom');
 define('DB_USER', 'root');
 define('DB_PASS', '371675');
 

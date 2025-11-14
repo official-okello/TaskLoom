@@ -3,21 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./assets/img/TaskLoom.ico" type="image/x-icon">
+    <link rel="stylesheet" href="./assets/css/style.css">
     <title>Register</title>
 </head>
 <body>
-    <h3>User Registration</h3>
-    <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
-        <?php require_once __DIR__ . '/bootstrap.php'; echo getCsrfInputField(); ?>
-        <label for="username">Username:</label>
-        <input type="text" id="username" required name="username" required>
-        <br/><br/>
-        <label for="password">Password:</label>
-        <input type="password" id="password" required name="password" required>
-        <br/><br/>
-        <button type="submit" name="register">Register</button>
-        <p class="redir-to-register">Already have an account? <a href="login.php">Login</a> here. </p>
-    </form>
+    <h3 class="login-register-title">Registration</h3>
+    <div class="form-container">
+        <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
+            <?php require_once __DIR__ . '/bootstrap.php'; echo getCsrfInputField(); ?>
+            <div class="form-group">
+                <label for="username">Username:</label>
+                <input type="text" id="username" required name="username" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" required name="password" required>
+            </div>
+            <div class="form-group">
+                <button type="submit" name="register">Register</button>
+            </div>
+            <p class="redir-to-register">Already have an account? <a href="login.php">Login</a> here. </p>
+        </form>
+    </div>
 </body>
 </html>
 

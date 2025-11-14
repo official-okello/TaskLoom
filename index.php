@@ -7,7 +7,7 @@
     }
 
     require_once __DIR__ . '/bootstrap.php';
-    // Ensure TaskManager class is available (bootstrap does not auto-include domain classes)
+    // Ensure TaskManager class is available
     require_once __DIR__ . '/includes/TaskManager.php';
     if (!isset($_SESSION['username']) || !isset($_SESSION['user_id'])) {
         header("Location: login.php");
@@ -24,6 +24,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./assets/img/TaskLoom.ico" type="image/x-icon">
     <title>TaskLoom</title>
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/filters.css">
@@ -47,8 +48,8 @@
             <img src="./assets/img/TaskLoom.png" alt="">
         </div>
         <div class="button-group">
-            <button class="btn btn-success"><a href="edit_task.php">New Task</a></button>
-            <button class="btn btn-danger"><a href="logout.php">Logout</a></button>    
+            <button class="btn btn-primary"><a href="edit_task.php">New Task</a></button>
+            <button class="btn btn-secondary"><a href="logout.php">Logout</a></button>    
         </div>
     </div>
     <span class="welcome-msg">Welcome, <?php echo htmlspecialchars($username); ?></span>
@@ -188,7 +189,7 @@
                         
                         echo "<div class='button-group'>";
                         if (strtolower($task['status']) !== 'done') {
-                            echo "<button type='submit' name='operation' value='Mark as Complete' class='btn btn-success'>Mark as Complete</button>";
+                            echo "<button type='submit' name='operation' value='Mark as Complete' class='btn btn-secondary'>Mark as Complete</button>";
                         }
                         echo "<button type='submit' name='operation' value='Edit' class='btn btn-primary'>Edit</button>";
                         echo "<button type='submit' name='operation' value='Delete' class='btn btn-danger'>Delete</button>";
