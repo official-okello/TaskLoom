@@ -2,12 +2,12 @@
 require_once __DIR__ . '/bootstrap.php';
 
 class RateLimit {
-    private const MAX_REQUESTS = 100; // Maximum requests per window
+    private const MAX_REQUESTS = 100; // 100 Maximum requests per window
     private const TIME_WINDOW = 3600; // Time window in seconds (1 hour)
     private $redis;
     
     public function __construct() {
-        // Using file-based rate limiting since Redis might not be available
+        // Using file-based rate limiting
         if (!is_dir(__DIR__ . '/../cache')) {
             mkdir(__DIR__ . '/../cache', 0755, true);
         }

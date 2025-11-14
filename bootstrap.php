@@ -1,5 +1,5 @@
 <?php
-// Central bootstrap for the SImpleToDo app
+// Central bootstrap for the TaskLoom app
 // Sets up sessions and common includes.
 define('APP_ROOT', __DIR__);
 

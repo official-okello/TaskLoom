@@ -21,6 +21,7 @@ try {
         'category' => !empty($_POST['category']) ? trim($_POST['category']) : null,
         'priority' => $_POST['priority'] ?? 'medium',
         'due_date' => !empty($_POST['due_date']) ? $_POST['due_date'] : null,
+        'alert_date' => !empty($_POST['alert_date']) ? $_POST['alert_date'] : null,
         'tags' => !empty($_POST['tags']) ? trim($_POST['tags']) : null,
         'status' => !empty($_POST['status']) ? trim($_POST['status']) : null
     ];

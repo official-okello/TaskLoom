@@ -41,15 +41,15 @@
 
 /* Task Priority Colors */
 .priority-high {
-    border-left: 4px solid #dc3545;
+    border-left: 4px solid #28a745;
 }
 
 .priority-medium {
-    border-left: 4px solid #ffc107;
+    border-left: 4px solid #538ce9;
 }
 
 .priority-low {
-    border-left: 4px solid #28a745;
+    border-left: 4px solid #ffc107;
 }
 
 /* Due Date Indicator */

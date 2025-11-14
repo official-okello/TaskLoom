@@ -48,7 +48,7 @@
             <img src="./assets/img/TaskLoom.png" alt="">
         </div>
         <div class="button-group">
-            <button class="btn btn-primary"><a href="edit_task.php">New Task</a></button>
+            <button class="btn btn-primary"><a href="addTask.php">New Task</a></button>
             <button class="btn btn-secondary"><a href="logout.php">Logout</a></button>    
         </div>
     </div>
@@ -144,7 +144,7 @@
                         // Normalize status classes to DB values 'open' and 'done'
                         $statusClass = strtolower($task['status']) === 'done' ? 'status-complete' : 'status-pending';
                         $priorityClass = 'priority-' . $task['priority'];
-                        
+
                         echo "<div class='task-item {$priorityClass}'>";
                         echo "<div class='task-content'>";
                         
@@ -161,7 +161,7 @@
                             $dueClass = strtotime($task['due_date']) < time() ? 'overdue' : '';
                             echo "<small class='due-date {$dueClass}'>Due: " . date('M j, Y g:i A', strtotime($task['due_date'])) . "</small>";
                         }
-                        
+
                         echo "<small class='{$statusClass}'>Status: " . htmlspecialchars(ucfirst($task['status'])) . "</small>";
                         echo "</div>";
                         
@@ -187,6 +187,7 @@
                         echo "<input type='hidden' name='task_creator_id' value='" . $task['creator_id'] . "'>";
                         echo "<input type='hidden' name='task_item' value='" . htmlspecialchars($task['task_item'], ENT_QUOTES) . "'>";
                         
+                        
                         echo "<div class='button-group'>";
                         if (strtolower($task['status']) !== 'done') {
                             echo "<button type='submit' name='operation' value='Mark as Complete' class='btn btn-secondary'>Mark as Complete</button>";
@@ -209,7 +210,7 @@
          ?>
     </div>
     <div class="footer">
-        <h5>&copy; <?php echo date('Y')?> Tech Afrika</h5>
+        <h5>&copy; <?php echo date("Y") ?> Tech Afrika</h5>
     </div>
 </body>
 </html>
